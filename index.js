@@ -3,9 +3,10 @@
 function getDogImage() {
   //let num = $('input[type=number]').val();
   let hound = $('#dog-breed').val();
-  console.log(hound);
+  
+  console.log(hound.toLowerCase());
 
-  fetch(`https://dog.ceo/api/breed/${hound}/images/random`)
+  fetch(`https://dog.ceo/api/breed/${hound.toLowerCase()}/images/random`)
     .then(response => response.json())
     .then(responseJson =>
       displayResults(responseJson))
